@@ -100,7 +100,7 @@ const team = [
 		role: "Team Leader & Flutter Developer",
 		bio: "Leads architecture, delivery, and calm UX.",
 		img: "/team/abderrahmane.jpg",
-		github: "https://github.com/",
+		github: "https://github.com/Abderrahamane",
 		linkedin: "https://www.linkedin.com/",
 	},
 	{
@@ -108,7 +108,7 @@ const team = [
 		role: "Flutter Developer",
 		bio: "Builds features fast with Firebase and Provider.",
 		img: "/team/mohamed.jpg",
-		github: "https://github.com/",
+		github: "https://github.com/Saad-Mohamed-Al-Amine",
 		linkedin: "https://www.linkedin.com/",
 	},
 	{
@@ -116,7 +116,7 @@ const team = [
 		role: "Flutter Developer (UI/UX)",
 		bio: "Designs delightful Material 3 experiences.",
 		img: "/team/lina.jpg",
-		github: "https://github.com/",
+		github: "https://github.com/LinaOuadah",
 		linkedin: "https://www.linkedin.com/",
 	},
 ];
@@ -314,8 +314,10 @@ export default function Home() {
 								Download for iOS
 							</Link>
 							<Link
-								href="https://github.com/"
+								href="https://github.com/Abderrahamane/DayFlow"
 								className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-3 text-foreground transition hover:-translate-y-0.5 hover:shadow-lg"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								<Github className="h-4 w-4" /> View on GitHub
 							</Link>
@@ -427,7 +429,7 @@ export default function Home() {
 							<div className="aspect-video overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
 								<iframe
 									className="h-full w-full"
-									src="https://www.youtube.com/embed/AVcc-rqTbnc"
+									src="https://www.youtube.com/watch?v=elg7eKegv0o"
 									title="DayFlow demo"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowFullScreen
