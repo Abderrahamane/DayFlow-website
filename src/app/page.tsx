@@ -86,10 +86,10 @@ const features = [
 ];
 
 const steps = [
-	{ title: "Install DayFlow", image: "/how/step1.png" },
-	{ title: "Create tasks & habits", image: "/how/step2.png" },
-	{ title: "Track progress", image: "/how/step3.png" },
-	{ title: "Sync across devices", image: "/how/step4.png" },
+	{ title: "Install DayFlow", image: "/how/step1-install.jpg" },
+	{ title: "Create tasks & habits", image: "/how/step2-create.jpg" },
+	{ title: "Track progress", image: "/how/step3-track.jpg" },
+	{ title: "Sync across devices", image: "/how/step4-sync.jpg" },
 ];
 
 const stack = [
