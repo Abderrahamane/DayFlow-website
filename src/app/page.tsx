@@ -39,49 +39,57 @@ const features = [
 		title: "Tasks & To-Dos",
 		description: "Create, sort, filter, recur, and template tasks with overdue clarity.",
 		icon: CheckCircle2,
+		image: "/features/tasks.png",
 	},
 	{
 		title: "Calendar Views",
 		description: "Month, two-week, and week views with priority colors and quick refresh.",
 		icon: RefreshCcw,
+		image: "/features/calendar.png",
 	},
 	{
 		title: "Habits & Streaks",
 		description: "Daily/weekly goals, streaks, colors, icons, and progress stats.",
 		icon: Sparkles,
+		image: "/features/habits.png",
 	},
 	{
 		title: "Reminders & Notifications",
 		description: "Schedule today/tomorrow/upcoming reminders with pull-to-refresh.",
 		icon: Bell,
+		image: "/features/reminders.png",
 	},
 	{
 		title: "Notes & Security",
 		description: "Text, checklists, rich notes, search, and biometric lock support.",
 		icon: ShieldCheck,
+		image: "/features/notes.png",
 	},
 	{
 		title: "Focus / Pomodoro",
 		description: "Linked tasks, focus minutes, streaks, history, and settings.",
 		icon: TimerReset,
+		image: "/features/focus.png",
 	},
 	{
 		title: "Sync & Offline",
 		description: "Cloud Firestore + offline cache for seamless multi-device planning.",
 		icon: Cloud,
+		image: "/features/sync.png",
 	},
 	{
 		title: "Multi-language & RTL",
 		description: "en / fr / ar with RTL-aware layouts and theming.",
 		icon: Languages,
+		image: "/features/language.png",
 	},
 ];
 
 const steps = [
-	"Install DayFlow",
-	"Create tasks & habits",
-	"Track progress",
-	"Sync across devices",
+	{ title: "Install DayFlow", image: "/how/step1.png" },
+	{ title: "Create tasks & habits", image: "/how/step2.png" },
+	{ title: "Track progress", image: "/how/step3.png" },
+	{ title: "Sync across devices", image: "/how/step4.png" },
 ];
 
 const stack = [
@@ -127,13 +135,18 @@ const screenshots = Array.from({ length: 8 }).map((_, idx) => ({
 }));
 
 const fadeIn = {
-	hidden: { opacity: 0, y: 12 },
-	show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+	hidden: { opacity: 0, y: 14, scale: 0.98 },
+	show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 const stagger = {
 	hidden: {},
 	show: { transition: { staggerChildren: 0.08 } },
+};
+
+const hoverFloat = {
+	rest: { y: 0, rotate: 0, transition: { type: "spring", stiffness: 120, damping: 12 } },
+	hover: { y: -6, rotate: 0.4, scale: 1.01, boxShadow: "0 20px 60px rgba(0,0,0,0.12)" },
 };
 
 function ThemeToggle() {
@@ -453,7 +466,10 @@ export default function Home() {
 									<item.icon className="h-5 w-5" />
 								</div>
 								<h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-								<div className="mt-2 h-20 rounded-xl bg-muted/50"></div>
+								<p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+								<div className="mt-3 h-28 overflow-hidden rounded-xl border border-border bg-muted/50">
+									<Image src={item.image} alt={item.title} width={400} height={200} className="h-full w-full object-cover" />
+								</div>
 							</motion.div>
 						))}
 					</motion.div>
@@ -493,7 +509,7 @@ export default function Home() {
 					<div className="mt-8 grid gap-4 md:grid-cols-4">
 						{steps.map((step, idx) => (
 							<motion.div
-								key={step}
+								key={step.title}
 								initial={{ opacity: 0, y: 16 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, amount: 0.3 }}
@@ -503,8 +519,10 @@ export default function Home() {
 								<div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted text-sm font-semibold text-accent">
 									{idx + 1}
 								</div>
-								<h3 className="mt-4 text-lg font-semibold">{step}</h3>
-								<div className="mt-2 h-28 rounded-xl bg-muted/60"></div>
+								<h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+								<div className="mt-3 h-28 overflow-hidden rounded-xl border border-border bg-muted/50">
+									<Image src={step.image} alt={step.title} width={400} height={200} className="h-full w-full object-cover" />
+								</div>
 							</motion.div>
 						))}
 					</div>
