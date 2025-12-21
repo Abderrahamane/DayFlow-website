@@ -170,9 +170,14 @@ function SectionHeading({
 }) {
 	return (
 		<div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-			<div>
-				<p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">{eyebrow}</p>
-				<h2 className="text-3xl font-bold leading-tight md:text-4xl">{title}</h2>
+			<div className="flex items-center gap-3">
+				<span className="h-10 w-10 rounded-2xl border border-border bg-card/80 p-2 shadow-sm">
+					<Image src="/logo.svg" alt="DayFlow" width={32} height={32} />
+				</span>
+				<div>
+					<p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">{eyebrow}</p>
+					<h2 className="text-3xl font-bold leading-tight md:text-4xl">{title}</h2>
+				</div>
 			</div>
 			{cta}
 		</div>
@@ -216,7 +221,7 @@ function Lightbox({ item, onClose }: { item: { src: string; alt: string } | null
 
 function ScreenshotCarousel({ onOpen }: { onOpen: (item: { src: string; alt: string }) => void }) {
 	const [index, setIndex] = useState(0);
-	const visible = 2;
+	const visible = 3;
 	const total = screenshots.length;
 	const maxIndex = Math.max(0, total - visible);
 
@@ -238,19 +243,19 @@ function ScreenshotCarousel({ onOpen }: { onOpen: (item: { src: string; alt: str
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: -20 }}
 								transition={{ type: "spring", stiffness: 120, damping: 18 }}
-								className="basis-1/2 shrink-0"
+								className="basis-1/3 shrink-0"
 							>
 								<button
 									onClick={() => onOpen(shot)}
 									className="group block w-full cursor-zoom-in"
 								>
-									<div className="relative aspect-[9/19] overflow-hidden rounded-xl border border-border bg-muted">
+									<div className="relative aspect-[10/19] overflow-hidden rounded-xl border border-border bg-muted">
 										<Image
 											src={shot.src}
 											alt={shot.alt}
 											fill
-											className="object-cover transition duration-300 group-hover:scale-[1.02]"
-											sizes="(min-width: 1024px) 45vw, 100vw"
+											className="object-cover transition duration-300 group-hover:scale-[1.04]"
+											sizes="(min-width: 1024px) 30vw, 90vw"
 										/>
 									</div>
 								</button>
@@ -289,7 +294,9 @@ export default function Home() {
 			<header className="sticky top-0 z-30 backdrop-blur border-b border-border/60 bg-background/80">
 				<div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 					<div className="flex items-center gap-3">
-						<div className="h-10 w-10 rounded-2xl" style={{ backgroundImage: "var(--gradient-1)" }} />
+						<div className="h-10 w-10 rounded-2xl border border-border bg-card/80 p-1 shadow-sm">
+							<Image src="/logo.svg" alt="DayFlow logo" width={36} height={36} />
+						</div>
 						<div>
 							<p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">DayFlow</p>
 							<p className="text-lg font-semibold leading-none">Smart Daily Planner</p>
@@ -300,7 +307,7 @@ export default function Home() {
 							className="hidden md:inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition hover:-translate-y-0.5 hover:shadow-lg"
 							href="#download"
 						>
-							Install app <ArrowRight className="h-4 w-4" />
+							Download APK <ArrowRight className="h-4 w-4" />
 						</Link>
 						<ThemeToggle />
 					</div>
@@ -346,13 +353,7 @@ export default function Home() {
 								href="#download"
 								className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-background transition hover:-translate-y-0.5 hover:shadow-lg"
 							>
-								Download for Android
-							</Link>
-							<Link
-								href="#download"
-								className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-foreground transition hover:-translate-y-0.5 hover:shadow-lg"
-							>
-								Download for iOS
+								Download APK
 							</Link>
 							<Link
 								href="https://github.com/Abderrahamane/DayFlow"
@@ -485,7 +486,7 @@ export default function Home() {
 				</section>
 
 				<section id="how" className="mx-auto max-w-6xl px-6 pb-20">
-					<SectionHeading eyebrow="How it works" title="From install to insights" />
+					<SectionHeading eyebrow="How it works" title="Simple flow" />
 					<div className="mt-8 grid gap-4 md:grid-cols-4">
 						{steps.map((step, idx) => (
 							<div key={step} className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm">
@@ -493,12 +494,7 @@ export default function Home() {
 									{idx + 1}
 								</div>
 								<h3 className="mt-4 text-lg font-semibold">{step}</h3>
-								<p className="mt-2 text-sm text-muted-foreground">
-									{idx === 0 && "Download on Android/iOS or scan the QR."}
-									{idx === 1 && "Add tasks, habits, notes, reminders, templates."}
-									{idx === 2 && "Track focus, streaks, analytics, and history."}
-									{idx === 3 && "Sync via Firebase + local cache; works offline."}
-								</p>
+								<div className="mt-2 h-28 rounded-xl bg-muted/60"></div>
 							</div>
 						))}
 					</div>
@@ -578,20 +574,20 @@ export default function Home() {
 				</section>
 
 				<section id="download" className="mx-auto max-w-6xl px-6 pb-24">
-					<div className="glass-card rounded-3xl p-8 shadow-xl">
+					<motion.div
+						initial={{ opacity: 0, y: 24 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, amount: 0.4 }}
+						transition={{ type: "spring", stiffness: 120, damping: 16 }}
+						className="glass-card rounded-3xl p-8 shadow-xl"
+					>
 						<div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 							<div>
 								<p className="text-sm font-semibold text-muted-foreground">Get the app</p>
-								<h2 className="text-3xl font-bold">Install DayFlow and start planning</h2>
-								<p className="mt-2 max-w-xl text-sm text-muted-foreground">
-									Download on your platform or scan the QR code to open the store page. Coming soon badges can be toggled easily.
-								</p>
+								<h2 className="text-3xl font-bold">Download the Android APK</h2>
 								<div className="mt-4 flex flex-wrap items-center gap-3">
 									<button className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-background transition hover:-translate-y-0.5 hover:shadow-lg">
-										<Smartphone className="h-4 w-4" /> Google Play
-									</button>
-									<button className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-foreground transition hover:-translate-y-0.5 hover:shadow-lg">
-										<Smartphone className="h-4 w-4" /> App Store
+										<Smartphone className="h-4 w-4" /> Download APK
 									</button>
 									<Link
 										href="https://github.com/"
@@ -600,6 +596,10 @@ export default function Home() {
 										<Github className="h-4 w-4" /> GitHub
 									</Link>
 								</div>
+								<div className="mt-4 flex gap-2 text-xs text-muted-foreground">
+									<span className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1">Offline-first</span>
+									<span className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1">Material 3</span>
+								</div>
 							</div>
 							<div className="flex items-center gap-4">
 								<div className="relative h-32 w-32 overflow-hidden rounded-2xl border border-border bg-muted">
@@ -607,19 +607,24 @@ export default function Home() {
 								</div>
 								<div className="text-sm text-muted-foreground">
 									<p className="font-semibold text-foreground">Scan to install</p>
-									<p>QR code opens the store page.</p>
+									<p>Opens the APK download.</p>
 								</div>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</section>
 			</main>
 
 			<footer className="border-t border-border/60 bg-background/80 px-6 py-10">
 				<div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-					<div>
-						<p className="text-lg font-semibold">DayFlow</p>
-						<p className="text-sm text-muted-foreground">© {new Date().getFullYear()} DayFlow. All rights reserved.</p>
+					<div className="flex items-center gap-3">
+						<div className="h-10 w-10 rounded-2xl border border-border bg-card/80 p-1 shadow-sm">
+							<Image src="/logo.svg" alt="DayFlow logo" width={36} height={36} />
+						</div>
+						<div>
+							<p className="text-lg font-semibold">DayFlow</p>
+							<p className="text-sm text-muted-foreground">© {new Date().getFullYear()} DayFlow. All rights reserved.</p>
+						</div>
 					</div>
 					<div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
 						<Link href="#">GitHub</Link>
