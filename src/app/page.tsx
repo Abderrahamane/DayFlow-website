@@ -339,7 +339,7 @@ export default function Home() {
 							initial={{ rotate: -2, opacity: 0, y: 20 }}
 							animate={{ rotate: 0, opacity: 1, y: 0 }}
 							transition={{ type: "spring", stiffness: 120, damping: 18 }}
-							className="gradient-border mx-auto max-w-[360px] rounded-2xl p-4 shadow-2xl"
+							className="gradient-border mx-auto max-w-90 rounded-2xl p-4 shadow-2xl"
 						>
 							<div className="rounded-xl bg-card p-4 shadow-inner">
 								<div className="flex items-center justify-between text-xs text-muted-foreground">
@@ -424,10 +424,10 @@ export default function Home() {
 					/>
 					<div className="mt-6 grid gap-6 lg:grid-cols-3">
 						<div className="lg:col-span-2 space-y-4">
-							<div className="aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
+							<div className="aspect-video overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
 								<iframe
 									className="h-full w-full"
-									src="https://www.youtube.com/embed/gZ9yZl7dG3M"
+									src="https://www.youtube.com/embed/AVcc-rqTbnc"
 									title="DayFlow demo"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowFullScreen
