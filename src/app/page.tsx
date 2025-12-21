@@ -340,7 +340,7 @@ export default function Home() {
 							transition={{ delay: 0.1 }}
 							className="mt-4 max-w-xl text-lg text-muted-foreground"
 						>
-							DayFlow blends tasks, habits, notes, reminders, focus, and analytics into a calm Material 3 experience with AI-ready workflows.
+							All-in-one planner for tasks, habits, focus, and notes with calm Material 3 motion.
 						</motion.p>
 						<motion.div
 							variants={fadeIn}
@@ -350,7 +350,7 @@ export default function Home() {
 							className="mt-8 flex flex-wrap items-center gap-3"
 						>
 							<Link
-								href="#download"
+								href="/dayflow.apk"
 								className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-background transition hover:-translate-y-0.5 hover:shadow-lg"
 							>
 								Download APK
@@ -382,6 +382,7 @@ export default function Home() {
 						<motion.div
 							initial={{ rotate: -2, opacity: 0, y: 20 }}
 							animate={{ rotate: 0, opacity: 1, y: 0 }}
+							whileHover={{ scale: 1.01, rotate: 0.5 }}
 							transition={{ type: "spring", stiffness: 120, damping: 18 }}
 							className="gradient-border mx-auto max-w-90 rounded-2xl p-4 shadow-2xl"
 						>
@@ -444,13 +445,15 @@ export default function Home() {
 							<motion.div
 								key={item.title}
 								variants={fadeIn}
-								className="group rounded-2xl border border-border bg-card/70 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+								whileHover={{ y: -8, scale: 1.02 }}
+								whileTap={{ scale: 0.99 }}
+								className="group rounded-2xl border border-border bg-card/70 p-5 shadow-sm transition"
 							>
 								<div className="flex h-11 w-11 items-center justify-center rounded-xl bg-muted text-accent">
 									<item.icon className="h-5 w-5" />
 								</div>
 								<h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-								<p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+								<div className="mt-2 h-20 rounded-xl bg-muted/50"></div>
 							</motion.div>
 						))}
 					</motion.div>
@@ -489,13 +492,20 @@ export default function Home() {
 					<SectionHeading eyebrow="How it works" title="Simple flow" />
 					<div className="mt-8 grid gap-4 md:grid-cols-4">
 						{steps.map((step, idx) => (
-							<div key={step} className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm">
+							<motion.div
+								key={step}
+								initial={{ opacity: 0, y: 16 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, amount: 0.3 }}
+								transition={{ type: "spring", stiffness: 160, damping: 18 }}
+								className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm"
+							>
 								<div className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted text-sm font-semibold text-accent">
 									{idx + 1}
 								</div>
 								<h3 className="mt-4 text-lg font-semibold">{step}</h3>
 								<div className="mt-2 h-28 rounded-xl bg-muted/60"></div>
-							</div>
+							</motion.div>
 						))}
 					</div>
 				</section>
@@ -586,9 +596,12 @@ export default function Home() {
 								<p className="text-sm font-semibold text-muted-foreground">Get the app</p>
 								<h2 className="text-3xl font-bold">Download the Android APK</h2>
 								<div className="mt-4 flex flex-wrap items-center gap-3">
-									<button className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-background transition hover:-translate-y-0.5 hover:shadow-lg">
+									<Link
+										href="/dayflow.apk"
+										className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-background transition hover:-translate-y-0.5 hover:shadow-lg"
+									>
 										<Smartphone className="h-4 w-4" /> Download APK
-									</button>
+									</Link>
 									<Link
 										href="https://github.com/"
 										className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-3 text-foreground transition hover:-translate-y-0.5 hover:shadow-lg"
