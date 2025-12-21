@@ -1,4 +1,3 @@
-import PageShell from "@/components/PageShell";
 import { downloadInfo } from "@/content/site";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,7 +5,6 @@ import { Smartphone, Github } from "lucide-react";
 
 export default function DownloadPage() {
   return (
-    <PageShell>
       <section className="mx-auto max-w-5xl px-6 pb-20 pt-16">
         <div className="max-w-3xl space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">Download</p>
@@ -50,6 +48,5 @@ export default function DownloadPage() {
           </div>
         </div>
       </section>
-    </PageShell>
   );
 }

@@ -1,9 +1,7 @@
-import PageShell from "@/components/PageShell";
 import { aboutSections } from "@/content/site";
 
 export default function AboutPage() {
   return (
-    <PageShell>
       <section className="mx-auto max-w-5xl px-6 pb-20 pt-16 space-y-10">
         <div className="max-w-3xl space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">About</p>
@@ -20,6 +18,5 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-    </PageShell>
   );
 }
