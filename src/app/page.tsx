@@ -122,7 +122,7 @@ const team = [
 ];
 
 const screenshots = Array.from({ length: 8 }).map((_, idx) => ({
-	src: `/screenshots/screen-${idx + 1}.jpg`,
+	src: `/screenshots/screen${idx + 1}.jpg`,
 	alt: `DayFlow screenshot ${idx + 1}`,
 }));
 
