@@ -6,18 +6,31 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "DayFlow – Smart Daily Planner",
   description:
-    "Organize your day. Build your flow. AI-inspired daily planner with tasks, habits, and insights.",
+    "Organize your day. Build your flow. AI-inspired daily planner with tasks, habits, reminders, notes, and insights.",
   metadataBase: new URL("https://dayflow.app"),
+  keywords: [
+    "DayFlow",
+    "daily planner",
+    "tasks",
+    "habits",
+    "pomodoro",
+    "Flutter",
+    "Firebase",
+    "Material 3",
+    "productivity app",
+  ],
   openGraph: {
     title: "DayFlow – Smart Daily Planner",
     description: "Organize your day. Build your flow.",
