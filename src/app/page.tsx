@@ -179,9 +179,28 @@ function SectionHeading({
 	);
 }
 
-function ScreenshotCarousel() {
+function Lightbox({ item, onClose }: { item: { src: string; alt: string } | null; onClose: () => void }) {
+	if (!item) return null;
+	return (
+		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" role="dialog" aria-modal>
+			<div className="relative max-h-[90vh] max-w-5xl w-full overflow-hidden rounded-2xl bg-card shadow-2xl">
+				<button
+					onClick={onClose}
+					className="absolute right-3 top-3 rounded-full bg-background/80 px-3 py-1 text-sm font-semibold text-foreground shadow hover:scale-105"
+				>
+					Close
+				</button>
+				<div className="relative h-[70vh] w-full">
+					<Image src={item.src} alt={item.alt} fill className="object-contain" sizes="90vw" />
+				</div>
+			</div>
+		</div>
+	);
+}
+
+function ScreenshotCarousel({ onOpen }: { onOpen: (item: { src: string; alt: string }) => void }) {
 	const [index, setIndex] = useState(0);
-	const visible = 3;
+	const visible = 2;
 	const total = screenshots.length;
 	const maxIndex = Math.max(0, total - visible);
 
@@ -203,17 +222,22 @@ function ScreenshotCarousel() {
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: -20 }}
 								transition={{ type: "spring", stiffness: 120, damping: 18 }}
-								className="basis-1/3 shrink-0"
+								className="basis-1/2 shrink-0"
 							>
-								<div className="relative aspect-[9/19] overflow-hidden rounded-xl border border-border bg-muted">
-									<Image
-										src={shot.src}
-										alt={shot.alt}
-										fill
-										className="object-cover"
-										sizes="(min-width: 1024px) 33vw, 100vw"
-									/>
-								</div>
+								<button
+									onClick={() => onOpen(shot)}
+									className="group block w-full cursor-zoom-in"
+								>
+									<div className="relative aspect-[9/19] overflow-hidden rounded-xl border border-border bg-muted">
+										<Image
+											src={shot.src}
+											alt={shot.alt}
+											fill
+											className="object-cover transition duration-300 group-hover:scale-[1.02]"
+											sizes="(min-width: 1024px) 45vw, 100vw"
+										/>
+									</div>
+								</button>
 							</motion.div>
 						))}
 					</AnimatePresence>
@@ -240,6 +264,7 @@ function ScreenshotCarousel() {
 }
 
 export default function Home() {
+	const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 	return (
 		<div className="min-h-screen bg-background text-foreground">
 			<div className="absolute left-[-120px] top-[-60px] blur-glow" style={{ background: "#818cf8" }} />
@@ -439,7 +464,7 @@ export default function Home() {
 							</div>
 							<p className="text-sm text-muted-foreground">Replace with your production demo or MP4 to showcase the app.</p>
 						</div>
-						<ScreenshotCarousel />
+						<ScreenshotCarousel onOpen={(item) => setLightbox(item)} />
 					</div>
 				</section>
 
@@ -514,11 +539,18 @@ export default function Home() {
 					<div className="mt-8 grid gap-4 md:grid-cols-3">
 						{team.map((member) => (
 							<div key={member.name} className="glass-card rounded-2xl p-5 shadow-sm">
-								<div className="relative h-14 w-14 overflow-hidden rounded-xl border border-border bg-muted">
-									<Image src={member.img} alt={member.name} fill className="object-cover" sizes="96px" />
-								</div>
-								<h3 className="mt-4 text-lg font-semibold">{member.name}</h3>
-								<p className="text-sm text-muted-foreground">{member.role}</p>
+								<button
+									onClick={() => setLightbox({ src: member.img, alt: member.name })}
+									className="group flex items-center gap-3 cursor-zoom-in"
+								>
+									<div className="relative h-20 w-20 overflow-hidden rounded-xl border border-border bg-muted">
+										<Image src={member.img} alt={member.name} fill className="object-cover transition duration-300 group-hover:scale-[1.03]" sizes="120px" />
+									</div>
+									<div className="text-left">
+										<h3 className="text-lg font-semibold">{member.name}</h3>
+										<p className="text-sm text-muted-foreground">{member.role}</p>
+									</div>
+								</button>
 								<p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
 								<div className="mt-3 flex gap-3 text-sm text-muted-foreground">
 									<Link href={member.github} className="hover:text-foreground">GitHub</Link>
@@ -583,6 +615,8 @@ export default function Home() {
 					</div>
 				</div>
 			</footer>
+
+			<Lightbox item={lightbox} onClose={() => setLightbox(null)} />
 		</div>
 	);
 }
