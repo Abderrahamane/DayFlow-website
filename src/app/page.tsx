@@ -429,8 +429,10 @@ export default function Home() {
 							<div className="aspect-video overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
 								<iframe
 									className="h-full w-full"
-									src="https://www.youtube.com/watch?v=elg7eKegv0o"
+									src="https://www.youtube.com/embed/elg7eKegv0o"
 									title="DayFlow demo"
+									loading="lazy"
+									referrerPolicy="strict-origin-when-cross-origin"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowFullScreen
 								/>
