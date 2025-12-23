@@ -37,13 +37,19 @@ export default function DownloadPage() {
             </ul>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="relative h-40 w-40 overflow-hidden rounded-2xl border border-border bg-muted">
-              <Image src="/file.svg" alt="QR code placeholder" fill className="object-contain" sizes="160px" />
+          <div className="flex flex-col items-center justify-center gap-6 rounded-3xl border border-border bg-gradient-to-br from-indigo-500/5 to-purple-500/5 p-8">
+            <div className="relative h-40 w-40 transition-transform hover:scale-105">
+              <Image
+                src="/logo.svg"
+                alt="DayFlow logo"
+                fill
+                className="object-contain drop-shadow-2xl"
+                sizes="160px"
+              />
             </div>
-            <div className="text-sm text-muted-foreground">
-              <p className="font-semibold text-foreground">Scan to install</p>
-              <p>Opens the APK download.</p>
+            <div className="text-center">
+              <p className="text-2xl font-bold text-foreground">DayFlow</p>
+              <p className="text-sm text-muted-foreground mt-1">Your daily companion</p>
             </div>
           </div>
         </div>
