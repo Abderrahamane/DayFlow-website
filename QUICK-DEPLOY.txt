@@ -1,0 +1,46 @@
+# 🚀 Quick Deploy Commands
+
+## Step 1: Commit & Push to GitHub
+cd "C:\Users\MICROSOFT\WebstormProjects\DayFlow website"
+git add -A
+git commit -m "feat: production-ready website with enhanced UI"
+git push origin master
+
+## Step 2: Deploy on Vercel
+# Go to: https://vercel.com/new
+# Click "Import" on your repository
+# Click "Deploy"
+# Wait 2 minutes
+# Done! ✅
+
+## Your Repository:
+https://github.com/Abderrahamane/DayFlow-website
+
+## After Deployment:
+Your site will be live at:
+https://dayflow-website.vercel.app
+
+## Future Updates:
+git add .
+git commit -m "update: your message"
+git push origin master
+# Vercel auto-deploys in ~1-2 minutes
+
+## Local Testing:
+npm run dev          # Development server (localhost:3000)
+npm run build        # Test production build
+npm run start        # Test production locally
+
+## Deployment Platform:
+Platform: Vercel
+Cost: $0/month (Free)
+Time: ~2-3 minutes
+SSL: Automatic
+CDN: Global
+Analytics: Included
+
+## Need Help?
+- Read: DEPLOYMENT.md
+- Check: CHECKLIST.txt
+- Docs: https://vercel.com/docs
+
