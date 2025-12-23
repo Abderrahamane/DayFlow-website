@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <circle cx="60" cy="60" r="40" stroke="#818cf8" stroke-width="2" fill="none" opacity="0.2"/>
+  <circle cx="60" cy="60" r="30" stroke="#818cf8" stroke-width="2" fill="none" opacity="0.4"/>
+  <circle cx="60" cy="60" r="20" fill="#818cf8" opacity="0.1"/>
+  <path d="M 60 20 Q 80 40 60 60 Q 40 40 60 20" fill="#fbbf24" opacity="0.8"/>
+  <text x="60" y="95" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#818cf8" text-anchor="middle">7</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">DAYS</text>
+</svg>
+

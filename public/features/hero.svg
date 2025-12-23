@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+  <!-- Workspace/Productivity Hero -->
+  <circle cx="100" cy="100" r="90" fill="#818cf8" opacity="0.05"/>
+
+  <!-- Main document/checklist -->
+  <rect x="60" y="40" width="80" height="110" rx="8" fill="#818cf8" opacity="0.1" stroke="#818cf8" stroke-width="2"/>
+
+  <!-- Checkboxes and lines -->
+  <circle cx="75" cy="65" r="6" fill="#22c55e"/>
+  <path d="M 72 65 L 75 68 L 79 62" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <line x1="90" y1="65" x2="125" y2="65" stroke="#818cf8" stroke-width="2" stroke-linecap="round"/>
+
+  <circle cx="75" cy="85" r="6" fill="#22c55e"/>
+  <path d="M 72 85 L 75 88 L 79 82" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <line x1="90" y1="85" x2="125" y2="85" stroke="#818cf8" stroke-width="2" stroke-linecap="round"/>
+
+  <circle cx="75" cy="105" r="6" stroke="#818cf8" stroke-width="2" fill="none"/>
+  <line x1="90" y1="105" x2="125" y2="105" stroke="#6b7280" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <circle cx="75" cy="125" r="6" stroke="#818cf8" stroke-width="2" fill="none"/>
+  <line x1="90" y1="125" x2="125" y2="125" stroke="#6b7280" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Timer/Clock element in corner -->
+  <circle cx="120" cy="55" r="15" fill="#fbbf24" opacity="0.2" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="120" y1="55" x2="120" y2="45" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="55" x2="127" y2="55" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Calendar element -->
+  <rect x="50" y="120" width="35" height="40" rx="4" fill="#818cf8" opacity="0.1" stroke="#818cf8" stroke-width="2"/>
+  <line x1="50" y1="130" x2="85" y2="130" stroke="#818cf8" stroke-width="2"/>
+  <circle cx="60" cy="140" r="2" fill="#818cf8" opacity="0.4"/>
+  <circle cx="68" cy="140" r="2" fill="#818cf8" opacity="0.4"/>
+  <circle cx="76" cy="140" r="2" fill="#22c55e"/>
+  <circle cx="60" cy="148" r="2" fill="#818cf8" opacity="0.4"/>
+  <circle cx="68" cy="148" r="2" fill="#818cf8" opacity="0.4"/>
+
+  <!-- Sparkle/star accent -->
+  <path d="M 145 125 L 147 120 L 149 125 L 154 127 L 149 129 L 147 134 L 145 129 L 140 127 Z" fill="#fbbf24" opacity="0.6"/>
+  <path d="M 55 75 L 56 72 L 57 75 L 60 76 L 57 77 L 56 80 L 55 77 L 52 76 Z" fill="#fbbf24" opacity="0.6"/>
+</svg>
+

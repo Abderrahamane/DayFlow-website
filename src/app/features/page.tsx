@@ -15,11 +15,10 @@ export default function FeaturesPage() {
 
            <div className="relative mx-auto mt-8 h-48 w-full max-w-sm opacity-60">
              <Image
-               src="https://illustrations.popsy.co/amber/productive-work.svg"
+               src="/features/hero.svg"
                alt="Features illustration"
                fill
                className="object-contain"
-               unoptimized
              />
            </div>
          </div>
