@@ -158,14 +158,15 @@ export const teamMembers = [
 ];
 
 export const downloadInfo = {
-  headline: "Download DayFlow",
-  summary: "Install the Android app and keep your day in one place.",
+  headline: "Your day, back in flow.",
+  summary: "Download the APK to get started. Available for Android.",
   primary: { label: "Download APK", href: "/dayflow.apk" },
-  secondary: { label: "View on GitHub", href: "https://github.com/Abderrahamane/DayFlow" },
+  secondary: { label: "View Source", href: "https://github.com/Abderrahamane/DayFlow" },
   steps: [
-    "Tap download to get the APK.",
-    "Install on your Android device.",
-    "Sign in and start planning in under a minute.",
+    "Download the APK file",
+    "Open it on your Android device",
+    "Allow installation from unknown sources if prompted",
+    "Enjoy your new flow",
   ],
 };
 

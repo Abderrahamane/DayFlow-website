@@ -31,6 +31,7 @@ export default function ThemeToggle() {
       className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
+      {/* Ensure icon matches client-side theme */}
       {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </button>
   );

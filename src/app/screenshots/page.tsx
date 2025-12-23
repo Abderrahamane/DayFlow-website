@@ -39,14 +39,14 @@ export default function ScreenshotsPage() {
           </button>
 
           <div className="flex w-full items-center justify-center gap-4">
-            <div className="hidden basis-1/6 opacity-50 sm:block scale-90">
+            <div className="hidden basis-1/5 opacity-40 sm:block scale-90 blur-[1px]">
               <ScreenshotPane keyId={currentSet.left.src} shot={currentSet.left} sizeClass="aspect-[10/19]" />
             </div>
-            <div className="basis-3/4 sm:basis-1/4">
+            <div className="basis-2/3 sm:basis-1/5">
               <ScreenshotPane keyId={currentSet.current.src} shot={currentSet.current} sizeClass="aspect-[10/19]" emphasize />
-              <p className="mt-3 text-center text-sm text-muted-foreground">{currentSet.current.label}</p>
+              <p className="mt-4 text-center text-sm font-medium text-muted-foreground">{currentSet.current.label}</p>
             </div>
-            <div className="hidden basis-1/6 opacity-50 sm:block scale-90">
+            <div className="hidden basis-1/5 opacity-40 sm:block scale-90 blur-[1px]">
               <ScreenshotPane keyId={currentSet.right.src} shot={currentSet.right} sizeClass="aspect-[10/19]" />
             </div>
           </div>

@@ -28,9 +28,9 @@ export default function TeamPage() {
             >
               <div className="glass-card rounded-2xl p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                 <div className="flex items-center gap-3">
-                  <div className="relative h-20 w-20 overflow-hidden rounded-xl border border-border bg-muted">
+                  <motion.div layoutId={member.name} className="relative h-20 w-20 overflow-hidden rounded-xl border border-border bg-muted">
                     <Image src={member.img} alt={member.name} fill className="object-cover" sizes="120px" />
-                  </div>
+                  </motion.div>
                   <div className="text-left">
                     <h3 className="text-lg font-semibold">{member.name}</h3>
                     <p className="text-sm text-muted-foreground">{member.role}</p>
