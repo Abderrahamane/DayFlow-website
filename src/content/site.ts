@@ -146,25 +146,17 @@ export const teamMembers = [
   {
     name: "Abderrahmane Houri",
     role: "Team Lead & Flutter Developer",
-    note: "Guides architecture and keeps the UX calm.",
+    note: "Built the Flutter app from scratch with clean architecture.",
     img: "/team/abderrahmane.jpg",
     github: "https://github.com/Abderrahamane",
     linkedin: "https://www.linkedin.com/",
   },
   {
     name: "Mohamed Al Amin Saàd",
-    role: "Flutter Developer",
-    note: "Ships features quickly with Firebase and Provider.",
+    role: "Backend Developer",
+    note: "Created the backend infrastructure and API services.",
     img: "/team/saad.jpg",
     github: "https://github.com/Saad-Mohamed-Al-Amine",
-    linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "Lina Selma Ouadah",
-    role: "Flutter Developer (UI/UX)",
-    note: "Crafts Material 3 visuals that stay approachable.",
-    img: "/team/lina.jpg",
-    github: "https://github.com/LinaOuadah",
     linkedin: "https://www.linkedin.com/",
   },
 ];
