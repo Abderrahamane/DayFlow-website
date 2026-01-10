@@ -164,7 +164,7 @@ export const teamMembers = [
 export const downloadInfo = {
   headline: "Your day, back in flow.",
   summary: "Download the APK to get started. Available for Android.",
-  primary: { label: "Download APK", href: "/dayflow.apk" },
+  primary: { label: "Download APK", href: "/app-release.apk" },
   secondary: { label: "View Source", href: "https://github.com/Abderrahamane/DayFlow" },
   steps: [
     "Download the APK file",
